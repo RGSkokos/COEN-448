@@ -66,9 +66,9 @@ public class RobotMotion {
 		System.out.println("Program starts");
 		boolean isTerminated = false;
 		Robot robotHdl = null;
-		
+		Scanner scanner = new Scanner(System.in);
 		do {
-			Scanner scanner = new Scanner(System.in);
+			
 			System.out.println("******Enter the next command below******");
 			String command = scanner.nextLine();
 			command = command.trim();
@@ -186,10 +186,12 @@ public class RobotMotion {
 			{
 				System.out.println("Warning Invalid command type. H or h to see the available commands");
 			}
-			
+		
 		}while(!isTerminated);
-
+		//Scanner scanner = new Scanner(System.in);
+		scanner.close();
 		System.out.println("Program ends");
+		
 
 	}
 
