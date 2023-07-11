@@ -31,8 +31,9 @@ public class RobotMotion {
 		}
 		else
 		{
-			// number of the tokens cannot be more than 2
-			if (tokenizer.countTokens() > 2)
+			// number of the tokens cannot be anything other than 2
+			int tokenCount = tokenizer.countTokens();
+			if (tokenCount != 1)
 			{
 				return false;
 			}
@@ -75,96 +76,104 @@ public class RobotMotion {
 			
 			boolean isValidCommand = false;
 			boolean isCommandChar = true;
-			if (commandChar == 'U' || commandChar == 'u')
-			{
-				if (parse(command, isCommandChar))
-				{
-					//TODO: Valid command, API calls to the robot
-					isValidCommand = true;
-				}
-			}
-			else if(commandChar == 'D' || commandChar == 'd')
-			{
-				if (parse(command, isCommandChar))
-				{
-					//TODO: Valid command, API calls to the robot
-					isValidCommand = true;
-				}
-			}
-			else if(commandChar == 'R' || commandChar == 'r')
-			{
-				if (parse(command, isCommandChar))
-				{
-					//TODO: Valid command, API calls to the robot
-					isValidCommand = true;
-				}			
-			}
-			else if(commandChar == 'L' || commandChar == 'l')
-			{
-				if (parse(command, isCommandChar))
-				{
-					//TODO: Valid command, API calls to the robot
-					isValidCommand = true;
-				}		
-			}
-			else if(commandChar == 'M' || commandChar == 'm')
-			{
-				isCommandChar = false;
-				if (parse(command, isCommandChar))
-				{
-					//TODO: Valid command, API calls to the robot
-					isValidCommand = true;
-				}			
-			}
-			else if(commandChar == 'P' || commandChar == 'p')
-			{
-				if (parse(command, isCommandChar))
-				{
-					//TODO: Valid command, API calls to the robot
-					isValidCommand = true;
-				}				
-			}
-			else if(commandChar == 'C' || commandChar == 'c')
-			{
-				if (parse(command, isCommandChar))
-				{
-					//TODO: Valid command, API calls to the robot
-					isValidCommand = true;
-					robotHdl.printCurrentPosition();
-				}			
-			}
-			else if(commandChar == 'Q' || commandChar == 'q')
-			{
-				if (parse(command, isCommandChar))
-				{
-					isValidCommand = true;
-					isTerminated = true;
-				}			
-			}
-			else if(commandChar == 'I' || commandChar == 'i')
-			{
-				isCommandChar = false;
-				if (parse(command, isCommandChar))
-				{
-					//TODO: Valid command, API calls to the robot
-					isValidCommand = true;
-					StringTokenizer tokenizer = new StringTokenizer(command);
-					tokenizer.nextToken();
-					String secondArg = tokenizer.nextToken();
-					robotHdl = new Robot(Integer.parseInt(secondArg));
-				}			
-			}
-			else if(commandChar == 'H' || commandChar == 'h')
-			{
-				//TODO: Print out available commands
-				isValidCommand = true;
-			}
 			
+			try
+			{
+				if (commandChar == 'U' || commandChar == 'u')
+				{
+					if (parse(command, isCommandChar))
+					{
+						isValidCommand = true;
+						robotHdl.penUp();
+					}
+				}
+				else if(commandChar == 'D' || commandChar == 'd')
+				{
+					if (parse(command, isCommandChar))
+					{
+						isValidCommand = true;
+						robotHdl.penDown();
+					}
+				}
+				else if(commandChar == 'R' || commandChar == 'r')
+				{
+					if (parse(command, isCommandChar))
+					{
+						isValidCommand = true;
+						robotHdl.turnRight();
+					}			
+				}
+				else if(commandChar == 'L' || commandChar == 'l')
+				{
+					if (parse(command, isCommandChar))
+					{
+						isValidCommand = true;
+						robotHdl.turnLeft();
+					}		
+				}
+				else if(commandChar == 'M' || commandChar == 'm')
+				{
+					isCommandChar = false;
+					if (parse(command, isCommandChar))
+					{
+						isValidCommand = true;
+						StringTokenizer tokenizer = new StringTokenizer(command);
+						tokenizer.nextToken();
+						String secondArg = tokenizer.nextToken();
+						robotHdl.moveForward(Integer.parseInt(secondArg));
+					}			
+				}
+				else if(commandChar == 'P' || commandChar == 'p')
+				{
+					if (parse(command, isCommandChar))
+					{
+						isValidCommand = true;
+						robotHdl.printFloor();
+					}				
+				}
+				else if(commandChar == 'C' || commandChar == 'c')
+				{
+					if (parse(command, isCommandChar))
+					{
+						isValidCommand = true;
+						robotHdl.printCurrentPosition();
+					}			
+				}
+				else if(commandChar == 'Q' || commandChar == 'q')
+				{
+					if (parse(command, isCommandChar))
+					{
+						isValidCommand = true;
+						isTerminated = true;
+					}			
+				}
+				else if(commandChar == 'I' || commandChar == 'i')
+				{
+					isCommandChar = false;
+					if (parse(command, isCommandChar))
+					{
+						isValidCommand = true;
+						StringTokenizer tokenizer = new StringTokenizer(command);
+						tokenizer.nextToken();
+						String secondArg = tokenizer.nextToken();
+						robotHdl = new Robot(Integer.parseInt(secondArg));
+					}			
+				}
+				else if(commandChar == 'H' || commandChar == 'h')
+				{
+					//TODO: Print out available commands
+					isValidCommand = true;
+				}
+			}
+			catch (NullPointerException e)
+			{
+				System.out.println("Warning Robot has not been initialized yet!");
+			}
 			
 			System.out.println("Command entered: " + command);
 			if (!isValidCommand)
 			{
-				System.out.println("Invalid command. H or h to see the available commands");
+				System.out.println("Warning Invalid command type. H or h to see the available commands");
 			}
 			
 		}while(!isTerminated);
