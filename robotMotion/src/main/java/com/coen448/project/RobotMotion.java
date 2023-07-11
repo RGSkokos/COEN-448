@@ -161,7 +161,18 @@ public class RobotMotion {
 				}
 				else if(commandChar == 'H' || commandChar == 'h')
 				{
-					//TODO: Print out available commands
+					
+					System.out.println("Available commands are: ");
+					System.out.println("I|i: Initialize the robot");
+					System.out.println("U|u: Pen up");	
+					System.out.println("D|d: Pen down");
+					System.out.println("R|r: Turn right");
+					System.out.println("L|l: Turn left");
+					System.out.println("M|m: Move forward");
+					System.out.println("P|p: Print the floor");
+					System.out.println("C|c: Print the current position");
+					System.out.println("Q|q: Quit the program");
+
 					isValidCommand = true;
 				}
 			}
