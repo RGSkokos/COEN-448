@@ -16,7 +16,7 @@ public class Robot {
 	boolean mIsPenUp;
 	Orientation mOrientation;
 	// Current position of the robot on the floor matrix
-	int mXPos, mYPos;
+	int mColumn, mRow;
 
 	// Initialize the robot, Constructor
 	public Robot(int sizeN)
@@ -84,92 +84,92 @@ public class Robot {
 		if(mOrientation == Orientation.North)
 		{
 			// Avoid going outside of the floor area
-			if(mXPos == mFloorDimension -1)
+			if(mRow == mFloorDimension -1)
 			{
 				return false;
 			}
-			if (mXPos + spaceS -1 > mFloorDimension -1)
+			if (mRow + spaceS -1 > mFloorDimension -1)
 			{
 				return false;
 			}
-			int destination = mXPos + spaceS;
+			int destination = mRow + spaceS;
 			if(!mIsPenUp)
 			{
-				for (int i = mXPos; i <= destination; i++)
+				for (int i = mRow; i <= destination; i++)
 				{
-					mFloor[i][mYPos] = 1;
+					mFloor[i][mColumn] = 1;
 				}
 			}
-			mXPos = destination;
+			mRow = destination;
 		}
 		else if(mOrientation == Orientation.South)
 		{
 			// Avoid going outside of the floor area
-			if(mXPos == 0)
+			if(mRow == 0)
 			{
 				return false;
 			}
-			if (mXPos - spaceS < 0)
+			if (mRow - spaceS < 0)
 			{
 				return false;
 			}
-			int destination = mXPos - spaceS;
+			int destination = mRow - spaceS;
 			if(!mIsPenUp)
 			{
-				for (int i = mXPos; i >= destination; i--)
+				for (int i = mRow; i >= destination; i--)
 				{
-					mFloor[i][mYPos] = 1;
+					mFloor[i][mColumn] = 1;
 				}
 			}
-			mXPos = destination;
+			mRow = destination;
 		}
 		else if(mOrientation == Orientation.East)
 		{
 			// Avoid going outside of the floor area
-			if(mYPos == mFloorDimension -1)
+			if(mColumn == mFloorDimension -1)
 			{
 				return false;
 			}
-			if (mYPos + spaceS -1 > mFloorDimension -1)
+			if (mColumn + spaceS -1 > mFloorDimension -1)
 			{
 				return false;
 			}
-			int destination = mYPos + spaceS;
+			int destination = mColumn + spaceS;
 			if(!mIsPenUp)
 			{
-				for (int i = mYPos; i <= destination; i++)
+				for (int i = mColumn; i <= destination; i++)
 				{
-					mFloor[mXPos][i] = 1;
+					mFloor[mRow][i] = 1;
 				}
 			}
-			mYPos = destination;
+			mColumn = destination;
 		}
 		else if(mOrientation == Orientation.West)
 		{
 			// Avoid going outside of the floor area
-			if(mYPos == 0)
+			if(mColumn == 0)
 			{
 				return false;
 			}
-			if (mYPos - spaceS < 0)
+			if (mColumn - spaceS < 0)
 			{
 				return false;
 			}
-			int destination = mYPos - spaceS;
+			int destination = mColumn - spaceS;
 			if(!mIsPenUp)
 			{
-				for (int i = mYPos; i >= destination; i--)
+				for (int i = mColumn; i >= destination; i--)
 				{
-					mFloor[mXPos][i] = 1;
+					mFloor[mRow][i] = 1;
 				}
 			}
-			mYPos = destination;
+			mColumn = destination;
 		}
 		return true;
 	}
 	public boolean printCurrentPosition()
 	{	//	Display the current position of the robot
-		System.out.print(" Position:" + mXPos + "," + mYPos);
+		System.out.print(" Position:" + mRow + "," + mColumn);
 		// Display the current state of the pen
 		if (mIsPenUp)
 		{
@@ -222,7 +222,7 @@ public class Robot {
 		return true;
 	}
 	// Initialize the floor using the sizeN, set all the elements to 0 and pen up
-	private void Init(int sizeN)
+	public void Init(int sizeN)
 	{
 		// validate the size of the floor, not less than 0
 		if (sizeN < 0)
@@ -245,7 +245,7 @@ public class Robot {
 		mOrientation = Orientation.North;
 
 		// Initialize the position
-		mXPos = 0;
-		mYPos = 0;
+		mRow = 0;
+		mColumn = 0;
 	}
 }

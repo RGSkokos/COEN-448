@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e2d0e36-72c4-47ee-907a-c7f32200d281" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/robotMotion/src/test/java/com/coen448/project/RobotMotionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/.project" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/RobotMotion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/RobotMotion.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/Robot$Orientation.class" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/Robot$Orientation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robotMotion/src/test/java/com/coen448/project/RobotMotionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/test/java/com/coen448/project/RobotMotionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +50,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/Amir/IntelliJ/Workshop 2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+    "last_opened_file_path": "C:/Users/Amir/IntelliJ/Workshop 3",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.general"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -64,6 +62,93 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.coen448.project" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.RobotMotionTest.should_not_allow_forward_command_with_negative_integer">
+    <configuration name="RobotMotion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotion" />
+      <module name="RobotMotion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coen448.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RobotMotionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RobotMotion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coen448.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.coen448.project" />
+      <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RobotMotionTest.should_display_warning_when_given_move_forward_with_negative_integer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RobotMotion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coen448.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.coen448.project" />
+      <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotionTest" />
+      <option name="METHOD_NAME" value="should_display_warning_when_given_move_forward_with_negative_integer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RobotMotionTest.should_not_allow_forward_command_with_negative_integer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RobotMotion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coen448.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.coen448.project" />
+      <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotionTest" />
+      <option name="METHOD_NAME" value="should_not_allow_forward_command_with_negative_integer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RobotMotionTest.should_throw_exception_when_move_forward_command_is_applied_with_negative_integer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RobotMotion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coen448.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.coen448.project" />
+      <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotionTest" />
+      <option name="METHOD_NAME" value="should_throw_exception_when_move_forward_command_is_applied_with_negative_integer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RobotMotionTest.should_not_allow_forward_command_with_negative_integer" />
+        <item itemvalue="Application.RobotMotion" />
+        <item itemvalue="JUnit.RobotMotionTest" />
+        <item itemvalue="JUnit.RobotMotionTest.should_display_warning_when_given_move_forward_with_negative_integer" />
+        <item itemvalue="JUnit.RobotMotionTest.should_throw_exception_when_move_forward_command_is_applied_with_negative_integer" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

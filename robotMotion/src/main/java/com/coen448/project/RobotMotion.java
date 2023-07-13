@@ -3,6 +3,8 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class RobotMotion {
+	static boolean isValidCommand;
+	static boolean isTerminated;
 	//used to print error messages, depending on the error
 	public static void printError(String errorMessage)
 	{
@@ -65,155 +67,158 @@ public class RobotMotion {
 		return true;
 	}
 
+	public static void printHelp()
+	{
+		System.out.println("Available commands are: ");
+		System.out.println("U|u: Pen up");
+		System.out.println("D|d: Pen down");
+		System.out.println("R|r: Turn right");
+		System.out.println("L|l: Turn left");
+		System.out.println("M s|m s: Move forward s spaces (s is a non-negative integer)");
+		System.out.println("P|p: Print the floor");
+		System.out.println("C|c: Print the current position");
+		System.out.println("Q|q: Quit the program");
+		System.out.println("I n|i n: Initialize the system: " +
+				"The values of the array floor are zeros and the robot\n" +
+				"\t\t is back to [0, 0], pen up and facing north. n size of the array, an integer\n " +
+				"\t\t greater than zero.");
+	}
+
+	public static void processCommand(String command, Robot robotHdl){
+		char commandChar = command.charAt(0);
+		// used to check if the command is valid
+		// used to check if the command is a command character
+		boolean isCommandChar = true;
+
+		try
+		{ //pen up command
+			if (commandChar == 'U' || commandChar == 'u')
+			{
+				if (parse(command, isCommandChar))
+				{
+					isValidCommand = true;
+					robotHdl.penUp();
+				}
+			}
+			//pen down command
+			else if(commandChar == 'D' || commandChar == 'd')
+			{
+				if (parse(command, isCommandChar))
+				{
+					isValidCommand = true;
+					robotHdl.penDown();
+				}
+			}
+			//turn right command
+			else if(commandChar == 'R' || commandChar == 'r')
+			{
+				if (parse(command, isCommandChar))
+				{
+					isValidCommand = true;
+					robotHdl.turnRight();
+				}
+			}
+			// turn left command
+			else if(commandChar == 'L' || commandChar == 'l')
+			{
+				if (parse(command, isCommandChar))
+				{
+					isValidCommand = true;
+					robotHdl.turnLeft();
+				}
+			}
+			// move forward command
+			else if(commandChar == 'M' || commandChar == 'm')
+			{
+				isCommandChar = false;
+				if (parse(command, isCommandChar))
+				{
+					isValidCommand = true;
+					StringTokenizer tokenizer = new StringTokenizer(command);
+					tokenizer.nextToken();
+					String secondArg = tokenizer.nextToken();
+					robotHdl.moveForward(Integer.parseInt(secondArg));
+				}
+			}
+			// print floor command
+			else if(commandChar == 'P' || commandChar == 'p')
+			{
+				if (parse(command, isCommandChar))
+				{
+					isValidCommand = true;
+					robotHdl.printFloor();
+				}
+			}
+			// print current position command
+			else if(commandChar == 'C' || commandChar == 'c')
+			{
+				if (parse(command, isCommandChar))
+				{
+					isValidCommand = true;
+					robotHdl.printCurrentPosition();
+				}
+			}
+			// quit command
+			else if(commandChar == 'Q' || commandChar == 'q')
+			{
+				if (parse(command, isCommandChar))
+				{
+					isValidCommand = true;
+					isTerminated = true;
+				}
+			}
+			//	initialize floor command
+			else if(commandChar == 'I' || commandChar == 'i')
+			{
+				isCommandChar = false;
+				if (parse(command, isCommandChar))
+				{
+					isValidCommand = true;
+					StringTokenizer tokenizer = new StringTokenizer(command);
+					tokenizer.nextToken();
+					String secondArg = tokenizer.nextToken();
+					robotHdl = new Robot(Integer.parseInt(secondArg));
+				}
+			}
+			else if(commandChar == 'H' || commandChar == 'h')
+			{
+				printHelp();
+				isValidCommand = true;
+			}
+		}
+		// catch null pointer exception when the robot has not been initialized yet
+		catch (NullPointerException e)
+		{
+			System.out.println("Warning Robot has not been initialized yet!");
+		}
+		System.out.println("Command entered: " + command);
+		if (!isValidCommand)
+		{
+			System.out.println("Warning Invalid command type. H or h to see the available commands");
+		}
+	}
+
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
 		System.out.println("Program starts");
-		boolean isTerminated = false;
 		//floor size initialization to 20, this can be changed to any positive integer
 		//requirement does not specify the size of the floor,
 		// so I am assuming it can be any NxN positive integer.
 		// User can change the size of the floor using the command "[I n|i n]"
-		Robot robotHdl = new Robot(20);
+		Robot robot = new Robot(20);
 		Scanner scanner = new Scanner(System.in);
 		do {
 
 			System.out.println("******Enter the next command below******");
 			String command = scanner.nextLine();
 			command = command.trim();
-			char commandChar = command.charAt(0);
-
-			// used to check if the command is valid
-			boolean isValidCommand = false;
-			// used to check if the command is a command character
-			boolean isCommandChar = true;
-
-			try
-			{ //pen up command
-				if (commandChar == 'U' || commandChar == 'u')
-				{
-					if (parse(command, isCommandChar))
-					{
-						isValidCommand = true;
-						robotHdl.penUp();
-					}
-				}
-				//pen down command
-				else if(commandChar == 'D' || commandChar == 'd')
-				{
-					if (parse(command, isCommandChar))
-					{
-						isValidCommand = true;
-						robotHdl.penDown();
-					}
-				}
-				//turn right command
-				else if(commandChar == 'R' || commandChar == 'r')
-				{
-					if (parse(command, isCommandChar))
-					{
-						isValidCommand = true;
-						robotHdl.turnRight();
-					}
-				}
-				// turn left command
-				else if(commandChar == 'L' || commandChar == 'l')
-				{
-					if (parse(command, isCommandChar))
-					{
-						isValidCommand = true;
-						robotHdl.turnLeft();
-					}
-				}
-				// move forward command
-				else if(commandChar == 'M' || commandChar == 'm')
-				{
-					isCommandChar = false;
-					if (parse(command, isCommandChar))
-					{
-						isValidCommand = true;
-						StringTokenizer tokenizer = new StringTokenizer(command);
-						tokenizer.nextToken();
-						String secondArg = tokenizer.nextToken();
-						robotHdl.moveForward(Integer.parseInt(secondArg));
-					}
-				}
-				// print floor command
-				else if(commandChar == 'P' || commandChar == 'p')
-				{
-					if (parse(command, isCommandChar))
-					{
-						isValidCommand = true;
-						robotHdl.printFloor();
-					}
-				}
-				// print current position command
-				else if(commandChar == 'C' || commandChar == 'c')
-				{
-					if (parse(command, isCommandChar))
-					{
-						isValidCommand = true;
-						robotHdl.printCurrentPosition();
-					}
-				}
-				// quit command
-				else if(commandChar == 'Q' || commandChar == 'q')
-				{
-					if (parse(command, isCommandChar))
-					{
-						isValidCommand = true;
-						isTerminated = true;
-					}
-				}
-				//	initialize floor command
-				else if(commandChar == 'I' || commandChar == 'i')
-				{
-					isCommandChar = false;
-					if (parse(command, isCommandChar))
-					{
-						isValidCommand = true;
-						StringTokenizer tokenizer = new StringTokenizer(command);
-						tokenizer.nextToken();
-						String secondArg = tokenizer.nextToken();
-						robotHdl = new Robot(Integer.parseInt(secondArg));
-					}
-				}
-				else if(commandChar == 'H' || commandChar == 'h')
-				{
-
-					System.out.println("Available commands are: ");
-					System.out.println("U|u: Pen up");
-					System.out.println("D|d: Pen down");
-					System.out.println("R|r: Turn right");
-					System.out.println("L|l: Turn left");
-					System.out.println("M s|m s: Move forward s spaces (s is a non-negative integer)");
-					System.out.println("P|p: Print the floor");
-					System.out.println("C|c: Print the current position");
-					System.out.println("Q|q: Quit the program");
-					System.out.println("I n|i n: Initialize the system: " +
-							"The values of the array floor are zeros and the robot\n" +
-							"\t\t is back to [0, 0], pen up and facing north. n size of the array, an integer\n " +
-							"\t\t greater than zero.");
-
-					isValidCommand = true;
-				}
-			}
-			// catch null pointer exception when the robot has not been initialized yet
-			catch (NullPointerException e)
-			{
-				System.out.println("Warning Robot has not been initialized yet!");
-			}
-			System.out.println("Command entered: " + command);
-			if (!isValidCommand)
-			{
-				System.out.println("Warning Invalid command type. H or h to see the available commands");
-			}
+			// used to collect the new terminated status
+			boolean isItTerminated;
+			processCommand(command, robot);
 
 		}while(!isTerminated);
 		scanner.close();
 		System.out.println("Program ends");
-
-
 	}
 
 }
