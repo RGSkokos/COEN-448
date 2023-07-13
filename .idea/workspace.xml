@@ -5,25 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e2d0e36-72c4-47ee-907a-c7f32200d281" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/robotMotion/RobotMotion.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/Robot$Orientation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/Robot.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

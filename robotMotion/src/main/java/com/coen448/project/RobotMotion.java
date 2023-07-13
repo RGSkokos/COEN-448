@@ -65,7 +65,10 @@ public class RobotMotion {
 		// TODO Auto-generated method stub
 		System.out.println("Program starts");
 		boolean isTerminated = false;
-		Robot robotHdl = null;
+		//floor size initialization to 20, this can be changed to any positive integer
+		//requirement does not specify the size of the floor,
+		// so I am assuming it can be any NxN positive integer
+		Robot robotHdl = new Robot(20);
 		Scanner scanner = new Scanner(System.in);
 		do {
 
