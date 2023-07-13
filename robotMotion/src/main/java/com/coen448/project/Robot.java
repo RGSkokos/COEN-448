@@ -1,8 +1,7 @@
 package com.coen448.project;
 
 public class Robot {
-
-	// Inner class
+	// All the possible orientations of the robot
 	enum Orientation
 	{
 		North,
@@ -10,33 +9,33 @@ public class Robot {
 		East,
 		West
 	}
-
-	// Member variables
 	int [][] mFloor;
+	// Size of the floor matrix
 	int mFloorDimension;
+	// True if the pen is up, false if the pen is down
 	boolean mIsPenUp;
 	Orientation mOrientation;
-	int mXPos;
-	int mYPos;
+	// Current position of the robot on the floor matrix
+	int mXPos, mYPos;
 
-	// Member methods
+	// Initialize the robot, Constructor
 	public Robot(int sizeN)
 	{
 		Init(sizeN);
 	}
-
+	// setup pen up
 	public boolean penUp()
 	{
 		mIsPenUp = true;
 		return true;
 	}
-
+	// setup pen down
 	public boolean penDown()
 	{
 		mIsPenUp = false;
 		return true;
 	}
-
+	// setup turn right
 	public boolean turnRight()
 	{
 		if(mOrientation == Orientation.North)
@@ -57,7 +56,7 @@ public class Robot {
 		}
 		return true;
 	}
-
+	// setup turn left
 	public boolean turnLeft()
 	{
 		if(mOrientation == Orientation.North)
@@ -78,9 +77,10 @@ public class Robot {
 		}
 		return true;
 	}
-
+	// setup move forward
 	public boolean moveForward(int spaceS)
 	{
+		// Move forward in the direction the robot is facing
 		if(mOrientation == Orientation.North)
 		{
 			// Avoid going outside of the floor area
@@ -167,10 +167,10 @@ public class Robot {
 		}
 		return true;
 	}
-
 	public boolean printCurrentPosition()
-	{
+	{	//	Display the current position of the robot
 		System.out.print(" Position:" + mXPos + "," + mYPos);
+		// Display the current state of the pen
 		if (mIsPenUp)
 		{
 			System.out.print(" Pen:" + " up");
@@ -179,6 +179,7 @@ public class Robot {
 		{
 			System.out.print(" Pen:" + " down");
 		}
+		// Display the current orientation of the robot
 		if(mOrientation == Orientation.North)
 		{
 			System.out.print(" Facing:" + " North");
@@ -198,13 +199,13 @@ public class Robot {
 		System.out.print("\n");
 		return true;
 	}
-
+	//	Display the floor marking, star for marked, space for unmarked
 	public boolean printFloor()
 	{
 		for (int i = mFloorDimension -1; i >= 0; i--)
 		{
 			for (int j = 0; j < mFloorDimension; j++)
-			{
+			{	// if marked, print star, else print space
 				if(mFloor[i][j] == 1)
 				{
 					System.out.print('*');
@@ -220,10 +221,10 @@ public class Robot {
 
 		return true;
 	}
-
+	// Initialize the floor using the sizeN, set all the elements to 0 and pen up
 	private void Init(int sizeN)
 	{
-		// Initialize the floor
+		// validate the size of the floor, not less than 0
 		if (sizeN < 0)
 		{
 			System.out.println("Size of the floor cannot be less than ZERO");
@@ -237,7 +238,6 @@ public class Robot {
 				mFloor[i][j] = 0;
 			}
 		}
-
 		// Initialize the pen
 		mIsPenUp = true;
 

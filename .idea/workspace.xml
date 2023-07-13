@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e2d0e36-72c4-47ee-907a-c7f32200d281" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" afterDir="false" />
     </list>
@@ -32,13 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Amir/IntelliJ/Workshop 2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Amir/IntelliJ/Workshop 2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
