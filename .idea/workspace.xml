@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e2d0e36-72c4-47ee-907a-c7f32200d281" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robotMotion/src/test/java/com/coen448/project/RobotMotionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/test/java/com/coen448/project/RobotMotionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" afterDir="false" />
@@ -63,7 +62,7 @@
       <recent name="com.coen448.project" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RobotMotionTest.should_not_allow_forward_command_with_negative_integer">
+  <component name="RunManager" selected="JUnit.RobotMotionTest">
     <configuration name="RobotMotion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotion" />
       <module name="RobotMotion" />
@@ -92,7 +91,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RobotMotionTest.should_display_warning_when_given_move_forward_with_negative_integer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RobotMotionTest.should_lift_pen_when_pen_up_command_is_given" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RobotMotion" />
       <extension name="coverage">
         <pattern>
@@ -102,13 +101,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.coen448.project" />
       <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotionTest" />
-      <option name="METHOD_NAME" value="should_display_warning_when_given_move_forward_with_negative_integer" />
+      <option name="METHOD_NAME" value="should_lift_pen_when_pen_up_command_is_given" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RobotMotionTest.should_not_allow_forward_command_with_negative_integer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RobotMotionTest.should_reset_the_robot_and_the_floor_array_when_initialize_command_is_given" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RobotMotion" />
       <extension name="coverage">
         <pattern>
@@ -118,13 +117,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.coen448.project" />
       <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotionTest" />
-      <option name="METHOD_NAME" value="should_not_allow_forward_command_with_negative_integer" />
+      <option name="METHOD_NAME" value="should_reset_the_robot_and_the_floor_array_when_initialize_command_is_given" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RobotMotionTest.should_throw_exception_when_move_forward_command_is_applied_with_negative_integer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RobotMotionTest.should_set_IsTerminated_when_quit_command_is_given" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RobotMotion" />
       <extension name="coverage">
         <pattern>
@@ -134,7 +133,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.coen448.project" />
       <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotionTest" />
-      <option name="METHOD_NAME" value="should_throw_exception_when_move_forward_command_is_applied_with_negative_integer" />
+      <option name="METHOD_NAME" value="should_set_IsTerminated_when_quit_command_is_given" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RobotMotionTest.should_not_allow_forward_command_with_negative_integer" />
-        <item itemvalue="Application.RobotMotion" />
         <item itemvalue="JUnit.RobotMotionTest" />
-        <item itemvalue="JUnit.RobotMotionTest.should_display_warning_when_given_move_forward_with_negative_integer" />
-        <item itemvalue="JUnit.RobotMotionTest.should_throw_exception_when_move_forward_command_is_applied_with_negative_integer" />
+        <item itemvalue="Application.RobotMotion" />
+        <item itemvalue="JUnit.RobotMotionTest.should_lift_pen_when_pen_up_command_is_given" />
+        <item itemvalue="JUnit.RobotMotionTest.should_reset_the_robot_and_the_floor_array_when_initialize_command_is_given" />
+        <item itemvalue="JUnit.RobotMotionTest.should_set_IsTerminated_when_quit_command_is_given" />
       </list>
     </recent_temporary>
   </component>

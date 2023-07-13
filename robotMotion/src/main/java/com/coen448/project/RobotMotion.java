@@ -5,6 +5,11 @@ import java.util.StringTokenizer;
 public class RobotMotion {
 	static boolean isValidCommand;
 	static boolean isTerminated;
+	//floor size initialization to 20, this can be changed to any positive integer
+	//requirement does not specify the size of the floor,
+	// so I am assuming it can be any NxN positive integer.
+	// User can change the size of the floor using the command "[I n|i n]"
+	static Robot robotHdl = new Robot(20);
 	//used to print error messages, depending on the error
 	public static void printError(String errorMessage)
 	{
@@ -84,11 +89,12 @@ public class RobotMotion {
 				"\t\t greater than zero.");
 	}
 
-	public static void processCommand(String command, Robot robotHdl){
+	public static void processCommand(String command){
 		char commandChar = command.charAt(0);
 		// used to check if the command is valid
 		// used to check if the command is a command character
 		boolean isCommandChar = true;
+		isValidCommand = false;
 
 		try
 		{ //pen up command
@@ -201,20 +207,14 @@ public class RobotMotion {
 	public static void main(String[] args)
 	{
 		System.out.println("Program starts");
-		//floor size initialization to 20, this can be changed to any positive integer
-		//requirement does not specify the size of the floor,
-		// so I am assuming it can be any NxN positive integer.
-		// User can change the size of the floor using the command "[I n|i n]"
-		Robot robot = new Robot(20);
 		Scanner scanner = new Scanner(System.in);
 		do {
 
 			System.out.println("******Enter the next command below******");
 			String command = scanner.nextLine();
 			command = command.trim();
-			// used to collect the new terminated status
-			boolean isItTerminated;
-			processCommand(command, robot);
+
+			processCommand(command);
 
 		}while(!isTerminated);
 		scanner.close();
