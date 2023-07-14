@@ -332,4 +332,19 @@ class RobotMotionTest {
                 () -> assertEquals(RobotMotion.robotHdl.mFloor[1][1], 0)
         );
     }
+
+
+    @Test
+    void is_valid_command() {
+        // given
+        String command = "I 5";
+        // when
+        Boolean result = RobotMotion.processCommand(command);
+        // then
+        assertAll(
+                // assert that robot is reset to its initial state
+                () -> assertTrue(result)
+
+        );
+    }
 }
