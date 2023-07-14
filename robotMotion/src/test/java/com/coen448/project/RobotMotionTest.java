@@ -332,4 +332,86 @@ class RobotMotionTest {
                 () -> assertEquals(RobotMotion.robotHdl.mFloor[1][1], 0)
         );
     }
+    @Test
+    void is_valid_command() {
+        // given
+        String command = "I 5";
+        // when
+        RobotMotion.processCommand(command);
+        // then
+        assertAll(
+                // assert that command is valid
+                () -> assertTrue(RobotMotion.isValidCommand)
+        );
+    }
+    
+    @Test
+    void should_print_current_position() {
+        // given
+        String command = "I 5";
+        String expectedCurrentPosition = " Position:0,0 Pen: up Facing: North";
+        // when
+        RobotMotion.processCommand(command);
+        // then
+        assertAll(
+                // assert that command is valid
+                () -> assertEquals(expectedCurrentPosition, RobotMotion.robotHdl.printCurrentPosition())
+        );
+    }
+    
+    @Test
+    void should_print() {
+        // given
+        String command = "I 2";
+        RobotMotion.processCommand(command);
+        command = "D";
+        RobotMotion.processCommand(command);
+        command = "M 1";
+        RobotMotion.processCommand(command);
+        String expectedFloor = "";
+        expectedFloor += '*';
+        expectedFloor += ' ';
+        expectedFloor += '\n';
+        expectedFloor += '*';
+        expectedFloor += ' ';
+        expectedFloor += '\n';
+        assertEquals(true,expectedFloor.equals(RobotMotion.robotHdl.printFloor()));
+
+    }
+    
+    @Test
+    void is_invalid_input() {
+        // given
+        String command = "I -2";
+        // when
+        RobotMotion.processCommand(command);
+        // then
+        assertFalse(RobotMotion.isValidCommand);
+        
+        command  = "I";
+        RobotMotion.processCommand(command);
+        // then
+        assertFalse(RobotMotion.isValidCommand);
+        
+        command  = "I Q";
+        RobotMotion.processCommand(command);
+        // then
+        assertFalse(RobotMotion.isValidCommand);
+        
+        RobotMotion.processCommand(null);
+        // then
+        assertFalse(RobotMotion.isValidCommand);
+        
+        command  = " ";
+        RobotMotion.processCommand(command);
+        // then
+        assertFalse(RobotMotion.isValidCommand);
+        
+        command  = "           ";
+        RobotMotion.processCommand(command);
+        // then
+        assertFalse(RobotMotion.isValidCommand);
+        
+
+    }
 }
