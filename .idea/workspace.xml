@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e2d0e36-72c4-47ee-907a-c7f32200d281" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/RobotMotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/src/test/java/com/coen448/project/RobotMotionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/test/java/com/coen448/project/RobotMotionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/target/classes/com/coen448/project/RobotMotion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/robotMotion/src/main/java/com/coen448/project/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,17 +41,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/Amir/IntelliJ/Workshop 3",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.general"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Amir/IntelliJ/Workshop 3&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -62,7 +60,7 @@
       <recent name="com.coen448.project" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RobotMotionTest">
+  <component name="RunManager" selected="Application.RobotMotion">
     <configuration name="RobotMotion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.coen448.project.RobotMotion" />
       <module name="RobotMotion" />
@@ -141,8 +139,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RobotMotionTest" />
         <item itemvalue="Application.RobotMotion" />
+        <item itemvalue="JUnit.RobotMotionTest" />
         <item itemvalue="JUnit.RobotMotionTest.should_lift_pen_when_pen_up_command_is_given" />
         <item itemvalue="JUnit.RobotMotionTest.should_reset_the_robot_and_the_floor_array_when_initialize_command_is_given" />
         <item itemvalue="JUnit.RobotMotionTest.should_set_IsTerminated_when_quit_command_is_given" />

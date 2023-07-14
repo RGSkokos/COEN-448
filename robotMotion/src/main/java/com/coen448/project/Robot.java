@@ -169,7 +169,7 @@ public class Robot {
 	}
 	public boolean printCurrentPosition()
 	{	//	Display the current position of the robot
-		System.out.print(" Position:" + mRow + "," + mColumn);
+		System.out.print(" Position:" + mColumn + "," + mRow);
 		// Display the current state of the pen
 		if (mIsPenUp)
 		{
