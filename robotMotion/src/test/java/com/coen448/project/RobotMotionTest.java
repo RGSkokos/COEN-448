@@ -339,12 +339,48 @@ class RobotMotionTest {
         // given
         String command = "I 5";
         // when
-        Boolean result = RobotMotion.processCommand(command);
+        RobotMotion.processCommand(command);
         // then
         assertAll(
-                // assert that robot is reset to its initial state
-                () -> assertTrue(result)
-
+                // assert that command is valid
+                () -> assertTrue(RobotMotion.isValidCommand)
         );
+    }
+    
+    @Test
+    void should_print_current_position() {
+        // given
+        String command = "I 5";
+        String expectedCurrentPosition = " Position:0,0 Pen: up Facing: North";
+        // when
+        RobotMotion.processCommand(command);
+        // then
+        assertAll(
+                // assert that command is valid
+                () -> assertEquals(expectedCurrentPosition, RobotMotion.robotHdl.printCurrentPosition())
+        );
+    }
+    
+    @Test
+    void should_print() {
+        // given
+        String command = "I 2";
+        RobotMotion.processCommand(command);
+        command = "D";
+        RobotMotion.processCommand(command);
+        command = "M 1";
+        RobotMotion.processCommand(command);
+        String expectedFloor = "";
+        expectedFloor += '*';
+        expectedFloor += ' ';
+        expectedFloor += '\n';
+        expectedFloor += '*';
+        expectedFloor += ' ';
+        expectedFloor += '\n';
+        expectedFloor.compareTo(RobotMotion.robotHdl.printFloor())
+        assertEquals(expectedFloor, RobotMotion.robotHdl.printFloor());
+        
+        System.out.print(expectedFloor + "test");
+
     }
 }
