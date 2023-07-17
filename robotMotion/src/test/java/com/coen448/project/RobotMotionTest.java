@@ -332,8 +332,8 @@ class RobotMotionTest {
                 () -> assertEquals(RobotMotion.robotHdl.mFloor[1][1], 0)
         );
     }
-    @Test
-    void is_valid_command() {
+     @Test
+    void should_check_is_valid_command_when_input_command_is_called() {
         // given
         String command = "I 5";
         // when
@@ -346,7 +346,7 @@ class RobotMotionTest {
     }
     
     @Test
-    void should_print_current_position() {
+    void should_print_current_position_when_input_command_is_given_and_position_command_is_called() {
         // given
         String command = "I 5";
         String expectedCurrentPosition = " Position:0,0 Pen: up Facing: North";
@@ -360,7 +360,7 @@ class RobotMotionTest {
     }
     
     @Test
-    void should_print() {
+    void should_print_flood_given_input_pen_down_and_move_command_are_called() {
         // given
         String command = "I 2";
         RobotMotion.processCommand(command);
@@ -380,7 +380,7 @@ class RobotMotionTest {
     }
     
     @Test
-    void is_invalid_input() {
+    void should_check_if_invalid_input_when_command_is_wrong() {
         // given
         String command = "I -2";
         // when
