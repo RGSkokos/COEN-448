@@ -10,12 +10,6 @@ public class RobotMotion {
 	// so I am assuming it can be any NxN positive integer.
 	// User can change the size of the floor using the command "[I n|i n]"
 	static Robot robotHdl = new Robot(20);
-	//used to print error messages, depending on the error
-	public static void printError(String errorMessage)
-	{
-		System.out.println(errorMessage);
-	}
-
 	//used to receive some string as input,
 	// extracts the necessary information from it and converts it into an object of the calling class.
 	// extracts the first character of the string and checks if it is a valid command
