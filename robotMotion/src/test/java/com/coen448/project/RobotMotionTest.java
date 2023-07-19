@@ -332,7 +332,8 @@ class RobotMotionTest {
                 () -> assertEquals(RobotMotion.robotHdl.mFloor[1][1], 0)
         );
     }
-    @Test
+
+     @Test
     void should_check_is_valid_command_when_input_command_is_called() {
         // given
         String command = "I 5";
@@ -411,6 +412,10 @@ class RobotMotionTest {
         RobotMotion.processCommand(command);
         // then
         assertFalse(RobotMotion.isValidCommand);
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 6ee212fe37d2d90895b6d8f30e72c97273d3ca4d
 
     }
 }
