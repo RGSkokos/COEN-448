@@ -412,10 +412,6 @@ class RobotMotionTest {
         RobotMotion.processCommand(command);
         // then
         assertFalse(RobotMotion.isValidCommand);
-<<<<<<< HEAD
-=======
-        
->>>>>>> 6ee212fe37d2d90895b6d8f30e72c97273d3ca4d
 
     }
 }
