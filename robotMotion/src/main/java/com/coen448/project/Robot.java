@@ -167,59 +167,71 @@ public class Robot {
 		}
 		return true;
 	}
-	public boolean printCurrentPosition()
-	{	//	Display the current position of the robot
+	public String printCurrentPosition()
+	{	
+		String output ="";
+		//	Display the current position of the robot
+		output = " Position:" + mColumn + "," + mRow;
 		System.out.print(" Position:" + mColumn + "," + mRow);
 		// Display the current state of the pen
 		if (mIsPenUp)
 		{
+			output +=  " Pen:" + " up";
 			System.out.print(" Pen:" + " up");
 		}
 		else
 		{
+			output += " Pen:" + " down";
 			System.out.print(" Pen:" + " down");
 		}
 		// Display the current orientation of the robot
 		if(mOrientation == Orientation.North)
 		{
+			output += " Facing:" + " North";
 			System.out.print(" Facing:" + " North");
 		}
 		else if(mOrientation == Orientation.South)
 		{
+			output += " Facing:" + " South";
 			System.out.print(" Facing:" + " South");
 		}
 		else if(mOrientation == Orientation.East)
 		{
+			output += " Facing:" + " East";
 			System.out.print(" Facing:" + " East");
 		}
 		else if(mOrientation == Orientation.West)
 		{
+			output += " Facing:" + " West";
 			System.out.print(" Facing:" + " West");
 		}
 		System.out.print("\n");
-		return true;
+		return output;
 	}
 	//	Display the floor marking, star for marked, space for unmarked
-	public boolean printFloor()
+	public String printFloor()
 	{
+		String output = "";
 		for (int i = mFloorDimension -1; i >= 0; i--)
 		{
 			for (int j = 0; j < mFloorDimension; j++)
 			{	// if marked, print star, else print space
 				if(mFloor[i][j] == 1)
 				{
+					output += '*';
 					System.out.print('*');
 				}
 				else
 				{
+					output += ' ';
 					System.out.print(' ');
 				}
-				System.out.print(' ');
 			}
+			output += '\n';
 			System.out.print('\n');
 		}
 
-		return true;
+		return output;
 	}
 	// Initialize the floor using the sizeN, set all the elements to 0 and pen up
 	public void Init(int sizeN)

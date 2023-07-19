@@ -90,6 +90,10 @@ public class RobotMotion {
 	}
 
 	public static void processCommand(String command){
+		if (command == null) {
+			isValidCommand = false;
+			return;
+		}
 		char commandChar = command.charAt(0);
 		// used to check if the command is valid
 		// used to check if the command is a command character
