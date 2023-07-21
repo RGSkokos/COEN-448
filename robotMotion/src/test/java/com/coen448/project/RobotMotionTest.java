@@ -350,7 +350,7 @@ class RobotMotionTest {
     void should_print_current_position_when_input_command_is_given_and_position_command_is_called() {
         // given
         String command = "I 5";
-        String expectedCurrentPosition = " Position:0,0 Pen: up Facing: North";
+        String expectedCurrentPosition = "Position:0,0 Pen: up Facing: North";
         // when
         RobotMotion.processCommand(command);
         // then
