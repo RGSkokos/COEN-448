@@ -141,7 +141,11 @@ public class RobotMotion {
 					StringTokenizer tokenizer = new StringTokenizer(command);
 					tokenizer.nextToken();
 					String secondArg = tokenizer.nextToken();
-					robotHdl.moveForward(Integer.parseInt(secondArg));
+					boolean isRobotMoved = robotHdl.moveForward(Integer.parseInt(secondArg));
+					if (!isRobotMoved)
+					{
+						System.out.println("Move command was denied due to insufficient floor spaces.");
+					}
 				}
 			}
 			// print floor command
