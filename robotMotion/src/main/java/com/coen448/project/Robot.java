@@ -88,7 +88,7 @@ public class Robot {
 			{
 				return false;
 			}
-			if (mRow + spaceS -1 > mFloorDimension -1)
+			if (mRow + spaceS > mFloorDimension -1)
 			{
 				return false;
 			}
@@ -130,7 +130,7 @@ public class Robot {
 			{
 				return false;
 			}
-			if (mColumn + spaceS -1 > mFloorDimension -1)
+			if (mColumn + spaceS > mFloorDimension -1)
 			{
 				return false;
 			}
@@ -171,7 +171,7 @@ public class Robot {
 	{	
 		String output ="";
 		//	Display the current position of the robot
-		output = " Position:" + mColumn + "," + mRow;
+		output = "Position:" + mColumn + "," + mRow;
 		System.out.print(" Position:" + mColumn + "," + mRow);
 		// Display the current state of the pen
 		if (mIsPenUp)
