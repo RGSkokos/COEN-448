@@ -88,7 +88,9 @@ public class RobotMotion {
 			isValidCommand = false;
 			return;
 		}
-		char commandChar = command.charAt(0);
+		try{
+			char commandChar = command.charAt(0);
+
 		// used to check if the command is valid
 		// used to check if the command is a command character
 		boolean isCommandChar = true;
@@ -203,6 +205,12 @@ public class RobotMotion {
 		if (!isValidCommand)
 		{
 			System.out.println("Warning Invalid command type. H or h to see the available commands");
+		}
+		}catch (StringIndexOutOfBoundsException e) {
+			isValidCommand = false;
+			System.out.println("Warning Invalid command type. " +
+					"H or h to see the available commands");
+			return;
 		}
 	}
 

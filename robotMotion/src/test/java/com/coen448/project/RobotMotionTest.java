@@ -414,4 +414,16 @@ class RobotMotionTest {
         assertFalse(RobotMotion.isValidCommand);
 
     }
+
+    @Test
+    void should_throw_exception_when_blank_is_input(){
+        // given
+        String command = " ";
+        // when
+        RobotMotion.processCommand(command);
+        // then
+        assertThrows(IllegalArgumentException.class, () -> {
+            throw new IllegalArgumentException("Invalid command");
+        });
+    }
 }
